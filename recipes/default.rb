@@ -44,7 +44,7 @@ execute "Auto-start VNC" do
 end
 
 package "Install development stuff" do
-  package_name %w(build-essential git nodej vagrant ruby-full)
+  package_name %w(build-essential git nodejs vagrant ruby-full)
 end
 
 execute "Install Virtualbox" do
