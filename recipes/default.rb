@@ -44,5 +44,12 @@ execute "Auto-start VNC" do
 end
 
 package "Install development stuff" do
-  package_name %w(build-essential git nodejs virtualbox vagrant ruby-full)
+  package_name %w(build-essential git nodej vagrant ruby-full)
+end
+
+execute "Install Virtualbox" do
+  user "ubuntu"
+  command <<EOF
+sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian '$(lsb_release -cs)' contrib non-free' > /etc/apt/sources.list.d/virtualbox.list" && wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install virtualbox-5.0
+EOF
 end
