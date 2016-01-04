@@ -1,1 +1,1 @@
-name "development_desktop"
+name "development"
