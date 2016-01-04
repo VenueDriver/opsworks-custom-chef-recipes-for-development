@@ -8,5 +8,5 @@ execute "apt-get-update" do
 end
 
 package "Install development stuff" do
-  package_name %w(build-essential git nodejs ruby-full docker-engine)
+  package_name %w(build-essential git nodejs ruby-full docker.io)
 end
