@@ -38,3 +38,21 @@ execute "Install Docker Compose" do
     chmod +x /usr/local/bin/docker-compose
   EOC
 end
+
+template '/sbin/idle-shutdown.rb' do
+  source 'idle-shutdown.rb'
+  owner 'root'
+  group 'root'
+  mode '755'
+end
+template '/home/ubuntu/crontab.txt' do
+  source 'crontab.txt'
+  owner 'ubuntu'
+  group 'ubuntu'
+  mode '644'
+end
+execute "Install Docker Compose" do
+  command <<-EOC
+    crontab /home/ubuntu/crontab.txt
+  EOC
+end
