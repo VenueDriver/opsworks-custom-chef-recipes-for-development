@@ -51,7 +51,7 @@ template '/home/ubuntu/crontab.txt' do
   group 'ubuntu'
   mode '644'
 end
-execute "Install Docker Compose" do
+execute "Set up crontab" do
   command <<-EOC
     crontab /home/ubuntu/crontab.txt
   EOC
